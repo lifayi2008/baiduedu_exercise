@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "微软雅黑";
+}
+
+#body {
+    width: 1100px;
+    margin: 0 auto;
+    background-color: #eeeeee;
+}
+
+header {
+    width: 1100px;
+    height: 60px;
+    color: white;
+    background-color: #555555;
+}
+
+header img {
+    height: 60px;
+    width: 150px;
+    opacity: 0.5;
+}
+
+nav {
+    width: 340px;
+    height: 60px;
+    position: absolute;
+    top: 20px;
+    right: 410px;
+    font-size: 13px;
+}
+
+nav li {
+    float: left;
+    margin: 0 10px;
+    list-style: none;
+}
+
+article, aside {
+    margin: 25px;
+    border: solid #aaaaaa 0.5px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    padding: 20px;
+    background-color: white;
+    font-size: 15px;
+}
+
+article h1 {
+    letter-spacing: 3px;
+    margin: 10px 10px 10px 0;
+}
+
+article h2 {
+    font-size: 16px;
+    color: #aaaaaa;
+    letter-spacing: 2px;
+    margin: 10px 10px 10px 0;
+}
+
+article figure {
+    font-size: 14px;
+    color: #aaaaaa;
+    letter-spacing: 2px;
+    margin: 10px 10px 10px 0;
+}
+
+article p {
+    text-indent: 4ch;
+    letter-spacing: 1px;
+    line-height:  1.5;
+}
+
+article ol {
+    margin: 10px;
+    list-style: none;
+    line-height: 2;
+}
+
+article figcaption {
+    display: block;
+}
+
+figure.img {
+    width: 128px;
+    height: 152px;
+    border: solid 1px #aaaaaa;
+}
+
+article p.no-indent {
+    text-indent: 0;
+}
+
+article table {
+    width: 1006px;
+    border-collapse: collapse;
+    border-color: #cccccc;
+    font-size: 12px;
+}
+
+article table tr.last {
+    background-color: #cccccc;
+}
+
+article table th {
+    background-color: #222222;
+    color: white;
+    font-weight: 100;
+    text-align: left;
+    padding: 5px;
+}
+
+article table td {
+    padding: 5px;
+}
+
+.form, .form section {
+    margin: 5px;
+    padding: 10px;
+}
+
+form label {
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+    margin-right: 5px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+form label.description {
+    position: relative;
+    top: -122px;
+}
+
+.tips {
+    font-size: 13px;
+    margin-left: 32%;
+    color: #aaa;
+}
+
+section input.submit{
+    width: 400px;
+    background-color: #7ad782;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    margin-left: 30%;
+}
+
+footer p {
+    background-color: #000;
+    text-align: center;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+}

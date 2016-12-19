@@ -1,0 +1,56 @@
+/**
+ * Created by lifayi on 2016/12/8.
+ */
+var EventUtil = {
+    addHandler : function(element, type, handler) {
+        if(element.addEventListener) {  //dom2事件
+            element.addEventListener(type, handler, false);
+        } else if(element.attachEvent) {    //ie事件
+            element.attachEvent("on" + type, handler);
+        } else {                        //dom0事件
+            element["on" + type] = handler;
+        }
+    },
+
+    removeHandler : function(element, type, handler) {
+        if(element.removeEventListener) {
+            element.removeEventListener(type, handler, false);
+        } else if(element.detachEvent) {
+            element.detachEvent("on" + type, handler);
+        } else {
+            element["on" + type] = null;
+        }
+    },
+
+    getEvent : function(event) {
+        return event ? event : window.event;
+    },
+
+    getTarget : function(event) {
+        return event.target || event.srcElement;
+    },
+
+    preventDefault : function(event) {
+        if(event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+    },
+
+    stopPropagation : function(event) {
+        if(event.stopPropagation) {
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
+        }
+    },
+
+    getCharCode : function(event) {
+        if(typeof event.charCode == "number") {
+            return event.charCode;
+        } else {
+            return event.keyCode;
+        }
+    },
+};
