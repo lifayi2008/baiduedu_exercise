@@ -39,17 +39,17 @@ div.right {
     float: right;
 }
 
-div.right:first-child {
-    margin-bottom: 10px;
-}
+/*div.right:first-child {*/
+    /*margin-bottom: 10px;*/
+/*}*/
 
 div.right img {
      margin: 10px 0 10px 0;
  }
 
-div.right:last-child {
-    margin-top: 10px;
-}
+/*div.right:last-child {*/
+    /*margin-top: 10px;*/
+/*}*/
 
 div.center {
     margin-left: 262px;
