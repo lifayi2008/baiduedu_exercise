@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 980px;
+    height: 1386px;
+    margin: 0 auto;
+    font-family: "微软雅黑";
+}
+
+main {
+    width: 892px;
+    height: 1162px;
+    border-top: solid 2px #938e8c;
+    border-bottom: solid 2px #938e8c;
+    margin: 0 auto;
+}
+
+header, footer {
+    height: 61px;
+    font-family: "黑体";
+    font-size: 12px;
+}
+
+#logo {
+    height: 61px;
+    width: 110px;
+    background-color: #c7254e;
+    margin-left: 44px;
+}
+
+#logo p {
+    color: white;
+    position: relative;
+    top: 42px;
+    left: 5px;
+}
+
+#date {
+    margin-right: 44px;
+}
+
+#date p {
+    color: #d45d5c;
+    float: right;
+    position: relative;
+    top: 42px;
+    right: 0;
+}
+
+footer p {
+    color: #d45d5c;
+    float: right;
+    position: relative;
+    top: 5px;
+    right: 44px;
+}
+
+section.top {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 301px;
+}
+
+section.top div.left {
+    width: 641px;
+}
+
+section.top div.right {
+    width: 203px;
+    float: right;
+    border-top: solid 2px #cc8091;
+    margin-right: 24px;
+}
+
+section.top div.right div.bigger {
+    font-size: 20px;
+    color: black;
+    line-height: 30px;
+    margin-top: 8px;
+}
+
+section.top div.right div.bigger p:after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: black;
+    margin-top: -4px;
+}
+
+section.top div.right div.bigger p.first:after {
+    width: 75px;
+}
+
+section.top div.right div.bigger p.second:after {
+    width: 142px;
+}
+
+section.top div.right div.bigger p:first-letter {
+    font-size: 30px;
+}
+
+section.top div.right div.smaller {
+    font-size: 12px;
+    color: #676767;
+    line-height: 10px;
+    font-family: "楷体";
+    font-style: oblique;
+    margin-top: 5px;
+}
+
+section.top div.right div.smaller p:first-letter {
+    text-transform: capitalize;
+}
+
+section.top div.right article.two {
+    margin-left: -8px;
+    font-size: 108px;
+    color: #75b86b;
+    font-style: oblique;
+}
+
+section.top div.right article.three p {
+    color: #cc8091;
+}
+
+section.top div.right article.three p.one{
+    color: #cc8091;
+    float: left;
+    font-size: 55px;
+}
+
+section.top div.right article.three p.two{
+    color: #cc8091;
+    padding-top: 28px;
+    margin-left: 80px;
+    font-size: 21px;
+    line-height: 21px;
+}
+
+section.top div.right article.three p.three{
+    color: #aaa;
+    margin-left: 80px;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+section.middle {
+    overflow: auto;
+}
+
+section.middle div {
+    width: 220px;
+    height: 250px;
+    float: left;
+    margin-right: 30px;
+}
+
+section.middle header {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+    height: 25px;
+    padding-top: 15px;
+}
+
+section.middle p {
+    font-size: 12px;
+    font-family: "宋体";
+    line-height: 18px;
+    color: #767777;
+}
+
+section.middle div.right ul {
+    list-style: none;
+    margin: 20px 20px 20px 0;
+}
+
+section.bottom div.one {
+    width: 415px;
+}
+
+section.bottom div.one header {
+    height: 180px;
+    border-bottom: solid 2px #11456b;
+}
+
+section.bottom div.one header p.p1 {
+    font-size: 42px;
+    color: #11456b;
+    font-family: "黑体";
+    font-weight: bold;
+}
+
+section.bottom div.one header span {
+    font-size: 72px;
+    color: #f5e327;
+    font-family: "黑体";
+    font-weight: bold;
+    font-style: oblique;
+}
+
+section.bottom div.one header p.p2 {
+    font-size: 33px;
+    color: #11456b;
+    font-family: "黑体";
+    font-weight: bold;
+}
+
+section.bottom div.one > p {
+    font-size: 12px;
+    color: #767777;
+    font-family: "宋体";
+    margin: 25px 0 0 0;
+    line-height: 18px;
+    letter-spacing: 2px;
+}
+
+section.bottom div.one > p.p3:first-letter {
+    font-size: 70px;
+    line-height: 70px;
+    color: #f5e327;
+    float: left;
+}
+
+section.bottom div.one > p.p4 {
+    margin: 0;
+    text-indent: 4ch;
+}
+
+section.bottom div.one img {
+    float: right;
+    margin-top: 70px;
+}
+
+section.bottom div.two {
+    width: 458px;
+    float: right;
+}
+
+section.bottom div.two div.bottom {
+    height: 260px;
+    margin: 20px 0;
+    background-color: #c7c491;
+}
+
+section.bottom div.two div.bottom ul {
+    list-style: none;
+    padding: 20px;
+}
+
+section.bottom div.two div.bottom ul li {
+    line-height: 30px;
+}
