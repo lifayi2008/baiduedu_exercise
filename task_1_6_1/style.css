@@ -66,6 +66,23 @@ section.top {
 
 section.top div.left {
     width: 641px;
+    height: 301px;
+    background-image: url(images/image_one.png);
+}
+
+section.top div.left div.left-float {
+    float: right;
+    height: 301px;
+    width: 191px;
+    background-color: red;
+    opacity: 0.2;
+}
+
+section.top div.left div.right-float {
+    height: 301px;
+    width: 191px;
+    background-color: green;
+    opacity: 0.2;
 }
 
 section.top div.right {
@@ -153,7 +170,7 @@ section.middle {
 
 section.middle div {
     width: 220px;
-    height: 250px;
+    height: 210px;
     float: left;
     margin-right: 30px;
 }
@@ -232,7 +249,8 @@ section.bottom div.one > p.p4 {
 
 section.bottom div.one img {
     float: right;
-    margin-top: 70px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 section.bottom div.two {
@@ -240,17 +258,101 @@ section.bottom div.two {
     float: right;
 }
 
+section.bottom div.two div.top {
+    width: 458px;
+    height: 255px;
+    background-image: url(images/image_three.png);
+}
+
+section.bottom div.two div.top div.top-op {
+    width: 438px;
+    height: 52px;
+    padding-top: 9px;
+    padding-left: 20px;
+    position: relative;
+    top: 194px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+section.bottom div.two div.top div.top-op > p {
+    border-left: solid 3px #72b16a;
+    height: 44px;
+    width: 425px;
+    line-height: 44px;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #72b16a;
+    font-style: italic;
+}
+
+section.bottom div.two div.top div.top-op > p span {
+    color: white;
+    font-size: 26px;
+    font-style: normal;
+}
+
 section.bottom div.two div.bottom {
-    height: 260px;
+    height: 280px;
     margin: 20px 0;
-    background-color: #c7c491;
+    background-color: #eeedd7;
+    position: relative;
 }
 
 section.bottom div.two div.bottom ul {
-    list-style: none;
-    padding: 20px;
+    list-style: square;
+    padding: 20px 20px 20px 40px;
 }
 
 section.bottom div.two div.bottom ul li {
     line-height: 30px;
+}
+
+section.bottom div.two div.bottom div.left {
+    width: 260px;
+    height: 160px;
+    background-color: #d05c5d;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-family: "黑体";
+}
+
+section.bottom div.two div.bottom div.left div.left {
+    width: 56px;
+    font-size: 110px;
+    float: left;
+    line-height: 160px;
+    margin-left: 10px;
+}
+
+section.bottom div.two div.bottom div.left div.right {
+    height: 86px;
+    width: 180px;
+    border-left: solid 2px #ffffff;
+    margin-top: 35px;
+    margin-left: 66px;
+}
+
+section.bottom div.two div.bottom div.left div.right header {
+    height: 55px;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 24px;
+    padding-left: 5px;
+}
+
+section.bottom div.two div.bottom div.left div.right p {
+    font-size: 12px;
+    line-height: 10px;
+    padding-left: 5px;
+}
+
+section.bottom div.two div.bottom div.right p.right {
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+    color: #515b5b;
+    padding: 20px;
+    margin-left: 260px;
 }
