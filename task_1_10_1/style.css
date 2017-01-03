@@ -1,0 +1,62 @@
+
+@media(min-width: 640px) {
+    main {
+         padding: 20px;
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: center;
+
+     }
+}
+
+@media(max-width: 640px) {
+    main {
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .four {
+        order: 1;
+    }
+
+    .one {
+        order: 2;
+    }
+
+    .two {
+        order: 3;
+    }
+
+    .three {
+        order: 4;
+    }
+}
+
+.box {
+    min-width: 150px;
+    margin-bottom: 10px;
+}
+
+.one {
+    height: 120px;
+    border: solid 1px red;
+}
+
+.two {
+    height: 100px;
+    border: solid 1px red;
+}
+
+.three {
+    height: 40px;
+    border: solid 1px red;
+}
+
+.four {
+    height: 200px;
+    border: solid 1px blue;
+}
