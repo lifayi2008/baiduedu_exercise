@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "微软雅黑 Light";
+    font-size: 14px;
+}
+
+table {
+    text-align: left;
+    margin: 20px;
+}
+
+th, td {
+    line-height: 25px;
+    padding-left: 5px;
+}
+
+tr > td:nth-child(1) {
+    width: 50px;
+}
+
+tr > td:nth-child(2) {
+    width: 200px;
+}
+
+tr > td:nth-child(3) {
+    width: 80px;
+}
+
+tr:nth-child(2n+1) {
+    background-color: #bbbbbb;
+}
+
+tr:nth-child(-n+4) {
+    color: red;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+.input {
+    margin: 20px;
+    width: 200px;
+    height: 30px;
+    font-size: 22px;
+    transition: width 0.3s;
+}
+
+.input:focus {
+    width: 300px;
+    box-shadow: 2px 0 2px 2px #84bbfc, -2px 0 2px 2px #84bbfc, 0 2px 2px #84bbfc, 0 -2px 2px 2px #84bbfc;
+}
+
+.section_three {
+    width: 300px;
+    height: 150px;
+    margin: 20px;
+}
+
+.slider {
+    width: 300px;
+    height: 150px;
+    background-color: blue;
+    transition: background-color 0.5s;
+}
+
+.item {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 600;
+    float: left;
+    display: inline-block;
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 1px 0 1px;
+    cursor: pointer;
+    position: relative;
+    top: 120px;
+    right: -205px;
+}
+
+.one:hover ~ .slider {
+    background-color: blue;
+}
+
+.two:hover ~ .slider {
+    background-color: green;
+}
+
+.three:hover ~ .slider {
+    background-color: red;
+}
