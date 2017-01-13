@@ -47,7 +47,7 @@ var chartData = {};
 
 // 记录当前页面的表单选项
 var pageState = {
-    nowSelectCity: -1,
+    nowSelectCity: 0,
     nowGraTime: "day"
 }
 
@@ -57,7 +57,32 @@ var cities = [];
  * 渲染图表
  */
 function renderChart() {
+    var eWidth = 5;
 
+    if(pageState.nowGraTime == "month") {
+        eWidth = 40;
+    } else if(pageState.nowGraTime == "week") {
+        eWidth = 20;
+    }
+
+    var chartElement = document.querySelector(".aqi-chart-wrap");
+
+    chartElement.innerHTML = "";
+
+    for(var i in chartData) {
+        var eDiv = document.createElement("div");
+        eDiv.style.width = eWidth + "px";
+        eDiv.style.border = "1px solid #fff";
+        eDiv.style.height = chartData[i];
+        if(chartData[i] < 100) {
+            eDiv.style.backgroundColor = "green";
+        } else if(chartData[i] < 500) {
+            eDiv.style.backgroundColor = "red";
+        } else {
+            eDiv.style.backgroundColor = "black";
+        }
+        chartElement.appendChild(eDiv);
+    }
 }
 
 /**
@@ -126,12 +151,17 @@ function initCitySelector() {
 function initAqiChartData() {
     // 将原始的源数据处理成图表需要的数据格式
     // 处理好的数据存到 chartData 中
+    var cityData = null;
+    var chartDataArray = null;
+
     if(pageState.nowGraTime == "day") {
-        chartData = aqiSourceData[pageState.nowSelectCity];
+        chartData = aqiSourceData[cities[pageState.nowSelectCity]];
     }
 
     if(pageState.nowGraTime == "week") {
-        var cityData = aqiSourceData[cities[pageState.nowSelectCity]];
+        cityData = aqiSourceData[cities[pageState.nowSelectCity]];
+        chartDataArray = {};
+
         for(var i in cityData) {
             var startDate = i;
             break;
@@ -139,9 +169,42 @@ function initAqiChartData() {
 
         var startDateInWeek = new Date(startDate).getDay();
 
+        var j = 0, x = 0, total = 0;
         for(var i in cityData) {
+            j++;
+            startDateInWeek++;
+            total += cityData[i];
 
+            if(j == 7 || startDateInWeek == 7) {
+                chartDataArray[x] = total / j;
+                j = 0;
+                total = 0;
+                x++;
+            }
         }
+        chartData = chartDataArray;
+    }
+
+    if(pageState.nowGraTime == "month") {
+        cityData = aqiSourceData[cities[pageState.nowSelectCity]];
+        chartDataArray = {};
+
+        var j = 0, oldMonth = 1;
+        for(var i in cityData) {
+            j++;
+            var month = parseInt(i.substring(5,7))
+            if(chartDataArray[month] == undefined) {
+                chartDataArray[month] = 0;
+            }
+            chartDataArray[month] += cityData[i];
+            if(month != oldMonth) {
+                chartDataArray[oldMonth] = chartDataArray[oldMonth] / (j - 1);
+                j = 1;
+                oldMonth = month;
+            }
+        }
+        chartDataArray[oldMonth] = chartDataArray[oldMonth] / j;
+        chartData = chartDataArray;
     }
 }
 
