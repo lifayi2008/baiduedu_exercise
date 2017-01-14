@@ -53,11 +53,34 @@ var pageState = {
 
 var cities = [];
 
+function displayHandler(event) {
+    var eSpan = document.getElementsByTagName("span")[0];
+    eSpan.innerText = event.target.style.height.replace(/px/, "");
+    eSpan.style.backgroundColor = "blue";
+    eSpan.style.color = "white";
+    eSpan.style.fontSize = "12px";
+    eSpan.style.top = event.clientY - 10 + "px";
+    eSpan.style.left = event.clientX + 10 + "px";
+}
+
+function createNumBox() {
+    //创建一个显示数值的元素
+    var eSpan = document.createElement("span");
+    eSpan.style.position = "fixed";
+    eSpan.style.top = "-999px";
+    document.body.appendChild(eSpan);
+}
+
+function hiddenHandler(event) {
+    var eSpan = document.getElementsByTagName("span")[0];
+    eSpan.style.top = "-999px"
+}
+
 /**
  * 渲染图表
  */
 function renderChart() {
-    var eWidth = 5;
+    var eWidth = 8;
 
     if(pageState.nowGraTime == "month") {
         eWidth = 40;
@@ -74,6 +97,7 @@ function renderChart() {
         eDiv.style.width = eWidth + "px";
         eDiv.style.border = "1px solid #fff";
         eDiv.style.height = chartData[i];
+        eDiv.style.cursor = "pointer";
         if(chartData[i] < 100) {
             eDiv.style.backgroundColor = "green";
         } else if(chartData[i] < 500) {
@@ -81,6 +105,8 @@ function renderChart() {
         } else {
             eDiv.style.backgroundColor = "black";
         }
+        eDiv.onmouseover = displayHandler;
+        eDiv.onmouseout = hiddenHandler;
         chartElement.appendChild(eDiv);
     }
 }
@@ -176,7 +202,7 @@ function initAqiChartData() {
             total += cityData[i];
 
             if(j == 7 || startDateInWeek == 7) {
-                chartDataArray[x] = total / j;
+                chartDataArray[x] = Number.parseInt(total / j);
                 j = 0;
                 total = 0;
                 x++;
@@ -198,12 +224,12 @@ function initAqiChartData() {
             }
             chartDataArray[month] += cityData[i];
             if(month != oldMonth) {
-                chartDataArray[oldMonth] = chartDataArray[oldMonth] / (j - 1);
+                chartDataArray[oldMonth] = Number.parseInt(chartDataArray[oldMonth] / (j - 1));
                 j = 1;
                 oldMonth = month;
             }
         }
-        chartDataArray[oldMonth] = chartDataArray[oldMonth] / j;
+        chartDataArray[oldMonth] = Number.parseInt(chartDataArray[oldMonth] / j);
         chartData = chartDataArray;
     }
 }
@@ -212,9 +238,11 @@ function initAqiChartData() {
  * 初始化函数
  */
 function init() {
-    initGraTimeForm()
+    createNumBox();
+    initGraTimeForm();
     initCitySelector();
     initAqiChartData();
+    renderChart();
 }
 
 init();
