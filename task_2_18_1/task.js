@@ -50,19 +50,23 @@ function action() {
     var eBtnLeftOut = document.getElementById("leftOut");
     eBtnLeftOut.onclick = function() {
         var popedValue = boxListData[0];
-        for(var i = 0; i < boxListData.length - 1; i++) {
-            boxListData[i] = boxListData[i+1];
+        if(popedValue != undefined) {
+            for(var i = 0; i < boxListData.length - 1; i++) {
+                boxListData[i] = boxListData[i+1];
+            }
+            boxListData.length -= 1;
+            renderBoxList();
+            alert(popedValue);
         }
-        boxListData.length -= 1;
-        renderBoxList();
-        alert(popedValue);
     };
 
     var eBtnRightOut = document.getElementById("rightOut");
     eBtnRightOut.onclick = function() {
         var popedValue = boxListData.pop();
-        renderBoxList();
-        alert(popedValue);
+        if(popedValue != undefined) {
+            renderBoxList();
+            alert(popedValue);
+        }
     };
 }
 
